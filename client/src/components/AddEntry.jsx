@@ -6,7 +6,7 @@ const AddEntry = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [emailAddress, setEmailAddress] = useState('');
-  const [entryList, setEntryList] = useState([])
+  const [volunteerList, setVolunteerList] = useState([])
 
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -15,7 +15,7 @@ const AddEntry = () => {
   // CREATE (POST)
   function submitEntry() {
     axios.post(`${process.env.REACT_APP_HOST}/api/create`, { first: firstName, last: lastName, email: emailAddress }).then((response) => {
-      setEntryList([...entryList, { first_name: firstName, last_name: lastName, email_address: emailAddress }]
+      setVolunteerList([...volunteerList, { first_name: firstName, last_name: lastName, email_address: emailAddress }]
       )
     })
 
